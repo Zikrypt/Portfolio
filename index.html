@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name - Portfolio</title>
+
+  <!-- Zasline Font (Add your actual font file if local) -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #ff7518, #2b2b2b);
+      color: #2b2b2b;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: rgba(255,255,255,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff7518;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #2b2b2b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff7518;
+    }
+
+    .hero {
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #ff7518, #2b2b2b);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: white;
+      color: #ff7518;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    section {
+      padding: 80px 0;
+      background: white;
+      border-radius: 20px;
+      margin: 2rem 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2b2b2b;
+      margin-bottom: 2rem;
+      position: relative;
+      animation: fadeInDown 1s ease;
+    }
+
+    .about-content,
+    .projects-grid,
+    .contact-info {
+      animation: fadeInUp 1s ease;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #ff7518;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 5px solid #2b2b2b;
+    }
+
+    .skills {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: #ff7518;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-image {
+      background: #ff7518;
+      color: white;
+      padding: 60px 0;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: #2b2b2b;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      text-align: center;
+    }
+
+    .contact-icon {
+      background: #ff7518;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .contact-text a {
+      color: #ff7518;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #2b2b2b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">Okelo Zikora</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+    <!-- Background Animation -->
+  <div class="lottie-bg">
+    <lottie-player
+      src="animations/hero-animation.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+
+  <div class="container">
+    <h1>I'm a Professional Web Developer, Cybersecurity Enthusiast & Web Developer </h1>
+    <p>Focused on creating secure didgital solutions and smart contracts integrations .</p>
+    <a href="#projects" class="cta-button">See My Work</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="image.png">Okelo Zikora</div>
+      <div>
+        <p>I’m a passionate developer with a focus on full stack design and smooth user experience. My mission is to build impactful and beautiful web solutions while implementing safety measures.</p>
+        <div class="skills">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Smart Contracts</span>
+          <span class="skill-tag">Web3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/solana_bot.png" alt="Solana Crypto Bot" style="width: 100%; border-radius: 10px;" />
+        </div>
+        <h3>Solana Whale Copy Bot</h3>
+        <p>A Telegram bot that mirrors trades of whale wallets on the Solana blockchain in real-time using webhooks and smart contract interaction.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Web3</span>
+          <span class="tech-tag">Telegram</span>
+          <span class="tech-tag">Solana</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/softether_vpn.png" alt="SoftEther VPN App" style="width: 100%; border-radius: 10px;" />
+        </div>
+        <h3>SoftEther VPN for iOS & Android</h3>
+        <p>Custom VPN mobile app built on SoftEther protocol with encrypted tunneling and user-friendly UI for cross-platform secure browsing.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Softether</span>
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/pekamy.png" alt="Pekamy Freshminds Website" style="width: 100%; border-radius: 10px;" />
+        </div>
+        <h3>Pekamy Freshminds Website
+        <p>Leading web development and security efforts for a fast growing recuriting firm in Nigeria.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Cybersecurity</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">@</div>
+        <div class="contact-text"><a href="Callm3samuel@gmail.com">Callm3samuel@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">in</div>
+        <div class="contact-text"><a href="https://www.linkedin.com/in/zikora-okelo-8818252a8" target="_blank">Zikora.dev</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">{ }</div>
+        <div class="contact-text"><a href="https://github.com/Zikrypt" target="_blank">Zikrypt</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Okelo Zikora. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
